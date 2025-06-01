@@ -4,18 +4,18 @@ Laravel-style routing system for Express.js in TypeScript. Simplify your route d
 
 ---
 
-## 🧪 See Example
-
-Curious how it all comes together?  
-👉 Check out [`example/index.ts`](https://github.com/refkinscallv/express-routing-ts/blob/main/example/index.ts) for a full working demo!
-
----
-
 ## 🛠 Installation
 
 ```bash
 npm install @refkinscallv/express-routing-ts
 ```
+
+---
+
+## 🧪 See Example
+
+Curious how it all comes together?  
+👉 Check out [`example/index.ts`](https://github.com/refkinscallv/express-routing-ts/blob/main/example/index.ts) for a full working demo!
 
 ---
 
