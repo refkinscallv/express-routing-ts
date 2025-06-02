@@ -27,9 +27,9 @@ class Routes {
      * Normalizations path
      */
     private static normalizePath(path: string): string {
-        // Ensure path starts with a single slash and does not end with a slash (except root "/")
-        return '/' + path.replace(/^\/+|\/+$/g, '')
-    }
+        const normalized = '/' + path.replace(/^\/+|\/+$/g, '')
+        return normalized === '/' ? '/' : normalized.replace(/\/+$/, '')
+    }    
 
     /**
      * Adds a route with specified methods, path, handler, and middlewares.
