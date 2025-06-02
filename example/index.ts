@@ -4,7 +4,7 @@ import { Routes } from '../src/'
 // Import route definitions (registers routes)
 import './routes/register'
 
-const PORT = 3000
+const PORT: number = 3000
 const app: Express = express()
 const router: Router = express.Router()
 

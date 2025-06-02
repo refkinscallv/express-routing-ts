@@ -5,7 +5,7 @@
  * @description Laravel-style routing system for Express.js using TypeScript.
  * @author Refkinscallv
  * @repository https://github.com/refkinscallv/express-routing-ts
- * @version 1.0.2
+ * @version 1.0.5
  * @date 2025
  */
 import { Router, Request, Response, NextFunction } from 'express'
@@ -24,6 +24,14 @@ class Routes {
     private static globalMiddlewares: RouteMiddleware[] = []
 
     /**
+     * Normalizations path
+     */
+    private static normalizePath(path: string): string {
+        // Ensure path starts with a single slash and does not end with a slash (except root "/")
+        return '/' + path.replace(/^\/+|\/+$/g, '')
+    }
+
+    /**
      * Adds a route with specified methods, path, handler, and middlewares.
      */
     static add(
@@ -33,7 +41,7 @@ class Routes {
         middlewares: RouteMiddleware[] = [],
     ) {
         const methodArray = Array.isArray(methods) ? methods : [methods]
-        const fullPath = `${this.prefix}${path}`.replace(/\/+/g, '/')
+        const fullPath = this.normalizePath(`${this.prefix}/${path}`)
 
         this.routes.push({
             methods: methodArray,

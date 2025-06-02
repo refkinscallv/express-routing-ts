@@ -110,7 +110,7 @@ class ThisStaticClass {
 
 // Unprotected routes group with unprotected middleware applied
 Routes.middleware([Middleware.unprotected], () => {
-    Routes.get('/directly', ({ req, res }: HttpContext): Response => {
+    Routes.get('directly', ({ req, res }: HttpContext): Response => {
         return res.status(200).json({
             status: true,
             code: 200,
@@ -118,15 +118,15 @@ Routes.middleware([Middleware.unprotected], () => {
             request: pickRequestFields(req),
         })
     })
-    Routes.get('/object', ThisObject.index)
-    Routes.get('/instance', [ThisInstanceClass, 'index'])
-    Routes.get('/static', ThisStaticClass.index)
+    Routes.get('object', ThisObject.index)
+    Routes.get('instance', [ThisInstanceClass, 'index'])
+    Routes.get('static', ThisStaticClass.index)
 })
 
 // Protected routes group with protected middleware applied, nested under /protected prefix
 Routes.middleware([Middleware.protected], () => {
-    Routes.group('/protected', () => {
-        Routes.get('/directly', ({ req, res }: HttpContext): Response => {
+    Routes.group('protected', () => {
+        Routes.get('directly', ({ req, res }: HttpContext): Response => {
             return res.status(200).json({
                 status: true,
                 code: 200,
@@ -134,8 +134,8 @@ Routes.middleware([Middleware.protected], () => {
                 request: pickRequestFields(req),
             })
         })
-        Routes.get('/object', ThisObject.protected)
-        Routes.get('/instance', [ThisInstanceClass, 'protected'])
-        Routes.get('/static', ThisStaticClass.protected)
+        Routes.get('object', ThisObject.protected)
+        Routes.get('instance', [ThisInstanceClass, 'protected'])
+        Routes.get('static', ThisStaticClass.protected)
     })
 })
