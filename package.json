@@ -1,6 +1,6 @@
 {
     "name": "@refkinscallv/express-routing-ts",
-    "version": "1.1.0",
+    "version": "1.1.1",
     "description": "Laravel-style routing for Express.js using TypeScript",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
@@ -35,7 +35,7 @@
     "license": "MIT",
     "repository": {
         "type": "git",
-        "url": "https://github.com/refkinscallv/express-routing-ts.git"
+        "url": "git+https://github.com/refkinscallv/express-routing-ts.git"
     },
     "bugs": {
         "url": "https://github.com/refkinscallv/express-routing-ts/issues"
