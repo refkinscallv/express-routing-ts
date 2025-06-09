@@ -5,7 +5,7 @@
  * @description Laravel-style routing system for Express.js using TypeScript.
  * @author Refkinscallv
  * @repository https://github.com/refkinscallv/express-routing-ts
- * @version 1.1.1
+ * @version 1.2.1
  * @date 2025
  */
 export { default as Routes } from './routes'

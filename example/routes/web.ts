@@ -126,6 +126,16 @@ Routes.middleware([Middleware.unprotected], () => {
 // Protected routes group with protected middleware applied, nested under /protected prefix
 Routes.middleware([Middleware.protected], () => {
     Routes.group('protected', () => {
+        Routes.group('sample', () => {
+            Routes.get('index', ({ req, res }: HttpContext): Response => {
+                return res.status(200).json({
+                    status: true,
+                    code: 200,
+                    message: 'Route handler with directly function + protected middleware',
+                    request: pickRequestFields(req),
+                })
+            })
+        })
         Routes.get('directly', ({ req, res }: HttpContext): Response => {
             return res.status(200).json({
                 status: true,
